@@ -1,51 +1,19 @@
-label{
-    padding: 0.5rem;
-    margin: 0.5rem auto;
-    height: 1rem;
-    width: 8rem;
-    border-radius: 0.7rem;
-    background: #FEDAC4;
-    border: solid #FF0000; 
+let go = document.getElementById("go");
+let output = document.getElementById("output");
+
+go.onclick = function(){
+  output.innerHTML = "";
+  for(let n=0; n<8; n++){
+    let i = Math.floor(Math.random() * (109 - 33)) +33;
+       if(i> 57){
+         i+=7;
+       }
+       if(i> 90){
+         i+=6;
+       }
+    let temp = String.fromCharCode(i);
+    output.append(temp)
+    console.log(i);
   }
   
-  button:hover{
-    cursor:pointer;
-  }
-  
-  #contaner{
-    flex-wrap: wrap;
-    background: #FF8E6F;
-    margin: 0 auto;
-    display:flex;
-    height: 12.2rem;
-    width: 11rem;
-    border-radius: 0.7rem;
-    border: solid #FF0000;
-  }
-  
-  #output{
-    margin: 0.5rem auto;
-    height: 2rem;
-    width: 10rem;
-    border-radius: 0.7rem;
-    background: #FEDAC4;
-    border: solid #FF0000; 
-    text-align: center;
-  }
-  
-  button{
-    padding:0.5rem;
-    margin: 0.5rem auto;
-    height: 3rem;
-    width: 6rem;
-    border-radius: 0.7rem;
-    background: #FEDAC4;
-    transition-duration: 0.4s;
-    border: solid #FF0000; 
-  }
-  
-  button:hover {
-    background-color: #FF8E6F;
-    color: black;
-    border: solid #FEDAC4; 
-  }
+}
